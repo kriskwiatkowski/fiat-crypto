@@ -48,6 +48,8 @@ jobs:
         (cd coq && ./configure -prefix /usr/local/ -warn-error yes -native-compiler no -coqide opt)
         (cd coq && make -j "$NJOBS" && dune build coq-core.install)
 
+    - run: find /usr/local
+
     - name: Install Coq
       run: |
         eval $(opam env)
